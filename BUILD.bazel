@@ -1,0 +1,14 @@
+py_binary(
+    name = "stamper",
+    srcs = ["stamper_template_transform.py"],
+    main = "stamper_template_transform.py",
+    visibility = ["//visibility:public"],
+)
+
+sh_binary(
+    name = "k8s_apply_script",
+    srcs = ["k8s_apply_script.sh"],
+    visibility = ["//visibility:public"],
+)
+
+exports_files(["k8s_apply_script.sh"])
